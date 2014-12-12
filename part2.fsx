@@ -404,29 +404,29 @@ module InvariantExamples =
 
         /// Given two lists, return true if they have the same contents
         /// regardless of order
-        let rec hasSameContents list1 list2 = 
+        let rec isPermutationOf list1 list2 = 
             match list1 with
             | [] -> List.isEmpty list2 // if both empty, true
             | h1::t1 -> 
                 match withoutElement h1 list2 with
                 | None -> false
                 | Some t2 -> 
-                    hasSameContents t1 t2
+                    isPermutationOf t1 t2
     
         (*        
-        hasSameContents  [1;2;3]  [3;1;2]
-        hasSameContents  [1;2;3]  
-        hasSameContents  [3;2] [1;2;3] 
-        hasSameContents  [1;2;3]  [4;1;2]
-        hasSameContents  [3;3] [3;3] 
-        hasSameContents  [3;3] [3;3;3] 
-        hasSameContents  [3;3;3] [3;3] 
+        isPermutationOf  [1;2;3]  [3;1;2]
+        isPermutationOf  [1;2;3]  
+        isPermutationOf  [3;2] [1;2;3] 
+        isPermutationOf  [1;2;3]  [4;1;2]
+        isPermutationOf  [3;3] [3;3] 
+        isPermutationOf  [3;3] [3;3;3] 
+        isPermutationOf  [3;3;3] [3;3] 
         *)
 
 
     let ``a sorted list has same contents as the original list`` sortFn (aList:int list) = 
         let sorted = aList |> sortFn 
-        ListContents.hasSameContents  aList sorted
+        ListContents.isPermutationOf  aList sorted
 
     Check.Quick (``a sorted list has same contents as the original list``  goodSort)
     // Ok, passed 100 tests.
