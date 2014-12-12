@@ -66,7 +66,9 @@
     <Compile Include="FsCheckAddin.fs" />
     <Compile Include="FsCheckExamples.fs" />
     <Compile Include="AdditionExamples.fs" />
-    <None Include="Script.fsx" />
+    <None Include="part1.fsx" />
+    <None Include="part2.fsx" />
+    <None Include="part3.fsx" />
     <None Include="word-wrap-kata.fsx" />
     <None Include="packages.config" />
     <None Include="app.config" />
