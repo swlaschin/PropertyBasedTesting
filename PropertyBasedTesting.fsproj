@@ -67,6 +67,7 @@
     <Compile Include="FsCheckExamples.fs" />
     <Compile Include="AdditionExamples.fs" />
     <None Include="Script.fsx" />
+    <None Include="word-wrap-kata.fsx" />
     <None Include="packages.config" />
     <None Include="app.config" />
   </ItemGroup>

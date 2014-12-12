@@ -536,19 +536,19 @@ module ControllingTheNumberOfTests =
     Check.One(config,isSmallerThan80 )
     // result: Ok, passed 1000 tests.
 
-    let config = {
+    let config' = {
         Config.Quick with 
             MaxTest = 10000
         }
-    Check.One(config,isSmallerThan80 )
+    Check.One(config',isSmallerThan80 )
     // result: Falsifiable, after 8660 tests (1 shrink) (StdGen (539845487,295941658)):
     //         80
 
-    let config = {
+    let config'' = {
         Config.Quick with 
             EndSize = 1000
         }
-    Check.One(config,isSmallerThan80 )
+    Check.One(config'',isSmallerThan80 )
     // result: Falsifiable, after 21 tests (4 shrinks) (StdGen (1033193705,295941658)):
     //         80
 
